@@ -40,12 +40,17 @@ HTML = """
             min-height: 100vh;
         }
         h2 {
-            font-size: 2.8em;
+            font-size: 4.8em;
             font-family: 'Segoe UI', Arial, sans-serif;
             font-weight: 700;
             letter-spacing: 1px;
             margin-bottom: 32px;
-            color: #333;
+            color: #6200c4;
+            opacity: 0;
+            transition: opacity 2.5s;
+        }
+        h2.visible {
+            opacity: 1;
         }
         form {
             margin-bottom: 30px;
@@ -91,7 +96,7 @@ HTML = """
 <body>
     <div class="bg-abacus"></div>
     <div class="content">
-        <h2>Base Converter</h2>
+        <h2 id="main-title">Base Converter</h2>
         <form method="post">
             <label>Number:</label>
             <input type="text" name="num_str" required><br>
@@ -107,6 +112,11 @@ HTML = """
             <p style="color:red;">Error: {{ error }}</p>
         {% endif %}
     </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('main-title').classList.add('visible');
+        });
+    </script>
 </body>
 </html>
 """
