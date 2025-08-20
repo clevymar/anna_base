@@ -36,8 +36,9 @@ HTML = """
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            justify-content: flex-start;  /* changed from center */
+            min-height: 60vh;             /* changed from 100vh */
+            margin-top: 40px;             /* added to push content down a bit */
         }
         h2 {
             font-size: 4.8em;
